@@ -1,10 +1,10 @@
-# 🧠 Local RAG + Chat Assistant (Cross-Platform)
+# Local RAG + Chat Assistant (Cross-Platform)
 
 > Build and run **Retrieval-Augmented Generation (RAG)** + **Chat** assistant locally on **Windows** or **Linux**, using open-weight models.
 
 ---
 
-## 🚀 Overview
+## Overview
 
 This project lets you:
 - 🗂️ Ingest PDFs, TXTs, or Markdown files.
@@ -14,7 +14,7 @@ This project lets you:
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 | Component | Tool | Purpose |
 |------------|------|----------|
@@ -38,8 +38,8 @@ ollama pull phi3:mini
 ollama pull nomic-embed-text
 
 # 3️⃣ Clone and setup project
-git clone https://github.com/<your-repo>/rag-chat-local.git
-cd rag-chat-local
+git clone https://github.com/<your-repo>/rag_local.git
+cd rag_local
 python -m venv .venv
 . .\.venv\Scripts\Activate.ps1
 pip install -U -r requirements.txt
@@ -49,7 +49,7 @@ python .\app\build_index.py
 streamlit run .\app\chat_ui.py
 ```
 
-Then open 👉 **http://localhost:8501**
+Then open **http://localhost:8501**
 
 ---
 
@@ -68,8 +68,8 @@ ollama pull phi3:mini
 ollama pull nomic-embed-text
 
 # 4️⃣ Clone and configure
-git clone https://github.com/<your-repo>/rag-chat-local.git
-cd rag-chat-local
+git clone https://github.com/<your-repo>/rag_local.git
+cd rag_local
 python3 -m venv .venv && source .venv/bin/activate
 pip install -U -r requirements.txt
 
@@ -80,7 +80,7 @@ streamlit run app/chat_ui.py
 
 ---
 
-## ⚙️ Environment Configuration (`app/.env`)
+## Environment Configuration (`app/.env`)
 
 ```env
 LLM_MODEL=phi3:mini
@@ -93,36 +93,19 @@ TOP_K=5
 
 ---
 
-## 💾 Project Structure
+## Project Structure
 
 ```
 rag-chat-local/
 ├── app/
 │   ├── build_index.py      # Builds document embeddings
 │   ├── chat_ui.py          # Streamlit multi-turn chat UI
-│   ├── image_embed.py      # (Optional) image RAG indexer
 │   └── .env                # Model and config
 ├── data/                   # PDFs, TXT, or MD files
 ├── chroma_db/              # Persistent vector DB
 ├── storage/                # LlamaIndex storage context
 ├── requirements.txt
 └── README.md
-```
-
----
-
-## 🧱 requirements.txt
-
-```text
-llama-index
-llama-index-llms-ollama
-llama-index-embeddings-huggingface
-chromadb
-unstructured
-pypdf
-python-dotenv
-streamlit
-sentence-transformers
 ```
 
 ---
