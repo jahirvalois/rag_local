@@ -53,7 +53,7 @@ Then open 👉 **http://localhost:8501**
 
 ---
 
-## 🐧 Linux Setup
+## Linux Setup
 
 ```bash
 # 1️⃣ System setup
